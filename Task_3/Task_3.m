@@ -17,16 +17,22 @@ MSD = 200; %Set the US value that corresponds to 3 inches (Motor Stopping Distan
 n=2;
 
 % Set the Kp and Ki values
-Kp = 
+Kp = 1;
 start(motor)
 
 %Drive forward until the sensor picks up a value within 3 inches.
 while n>0
  %take a reading of the sensor values
  us_val = readInputDeviceREADY_RAW(myev3,1,0,1) % reading the us sensor from port 1
- ir_val_l = readInputDeviceREADY_RAW(myev3,2,0,1) % reading the left IR sensor from port 2
- ir_val_m = readInputDeviceREADY_RAW(myev3,3,0,1) % reading the left IR sensor from port 3
- ir_val_r = readInputDeviceREADY_RAW(myev3,4,0,1) % reading the left IR sensor from port 4       
+ L = readInputDeviceREADY_RAW(myev3,2,0,1) % reading the left IR sensor from port 2
+ F = readInputDeviceREADY_RAW(myev3,3,0,1) % reading the left IR sensor from port 3
+ A = readInputDeviceREADY_RAW(myev3,4,0,1) % reading the left IR sensor from port 4       
+
+ reading = (-2*L)+F+A
+ 
+ 
+ %call the line cal code
+ 
 
  %Calculate the line position
  
