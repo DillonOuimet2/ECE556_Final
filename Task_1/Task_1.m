@@ -6,7 +6,7 @@ Team 3 - Annie Kate Watson, Dillon Ouimet, Jacob XXX, Trenton Wallis
 
 clc
 clear
-
+%close all
 
 %Setup the connections to the mindstorm
 myev3 = legoev3('usb');
